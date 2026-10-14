@@ -40,6 +40,9 @@ export default async function Page({ params }: PageProp) {
           <p>{`${journal.startDate.split('T')[0]}`}</p>
         )}
         <p>Created at: {postDate}</p>
+        <p>
+          <Link href={journal.googleMapsLink}>View on Google Maps</Link>
+        </p>
         {image?.url && <Image src={image.url} alt={image.alt} width={400} height={400} />}
         <p>{journal.content}</p>
       </article>

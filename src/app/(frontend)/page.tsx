@@ -19,22 +19,31 @@ export default async function Page() {
   })
   return (
     <main>
-      <section>
+      <section className="journal-container">
         {journals.docs.length === 0 ? (
           <p>No journals published yet</p>
         ) : (
           journals.docs.map((journal) => {
             const image = journal.image as Media | null
             return (
-              <article key={journal.id}>
+              <article key={journal.id} className="journal">
                 {image?.url && (
-                  <Image src={image.url} alt={image.alt} width={250} height={250} loading="lazy" />
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    width={200}
+                    height={200}
+                    loading="lazy"
+                    className="journal-image"
+                  />
                 )}
-                <h3>{journal.title}</h3>
-                <p>{journal.excerpt}</p>
-                <p>
-                  <Link href={`/journals/${journal.slug}`}>continue reading</Link>
-                </p>
+                <div className="journal-info-container">
+                  <h3>{journal.title}</h3>
+                  <p>{journal.excerpt}</p>
+                  <p>
+                    <Link href={`/journals/${journal.slug}`}>continue reading</Link>
+                  </p>
+                </div>
               </article>
             )
           })
