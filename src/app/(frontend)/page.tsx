@@ -27,7 +27,9 @@ export default async function Page() {
             const image = journal.image as Media | null
             return (
               <article key={journal.id}>
-                {image?.url && <Image src={image.url} alt={image.alt} width={250} height={250} />}
+                {image?.url && (
+                  <Image src={image.url} alt={image.alt} width={250} height={250} loading="lazy" />
+                )}
                 <h3>{journal.title}</h3>
                 <p>{journal.excerpt}</p>
                 <p>
