@@ -23,6 +23,12 @@ export const Journals: CollectionConfig = {
       required: true,
     },
     {
+      name: 'slug',
+      type: 'text',
+      required: true,
+      unique: true,
+    },
+    {
       name: 'country',
       type: 'text',
       required: true,

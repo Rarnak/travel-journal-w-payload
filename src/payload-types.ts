@@ -172,6 +172,7 @@ export interface Journal {
   id: number;
   image?: (number | null) | Media;
   title: string;
+  slug: string;
   country: string;
   googleMapsLink: string;
   startDate: string;
@@ -308,6 +309,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface JournalsSelect<T extends boolean = true> {
   image?: T;
   title?: T;
+  slug?: T;
   country?: T;
   googleMapsLink?: T;
   startDate?: T;
